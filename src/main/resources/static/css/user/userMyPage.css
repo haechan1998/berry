@@ -1,0 +1,631 @@
+:root {
+    --primary-color: #e74b60;
+    --primary-hover: #eb6476;
+    --gray-light: #f5f5f5;
+    --gray-dark: #666;
+    --font-dark: #333;
+    --disabled: #b85766c7;
+
+}
+
+/* headTit */
+.myPage-headTit {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+/* content-group */
+.myPage-content-group {
+  margin: 100px 0;
+}
+
+/* gray-tit */
+.gray-tit {
+  font-size: 14px !important;
+  color: rgba(128, 128, 128, 0.6) !important;
+}
+
+/* myPage-wrapper */
+.myPage-wrapper {
+  background: white;
+  height: 200px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.myPage-wrapper-tit {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgba(128, 128, 128, 0.4);
+  text-align: center;
+  
+}
+
+/* myPage-select-ul */
+.myPage-select-ul {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 100px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.myPage-select-ul li:first-child {
+  margin-left: 0 !important;
+}
+.myPage-select-ul li {
+  margin-left: 50px;
+}
+
+.myPage-select-ul button {
+  background-color: transparent;
+  padding: 0 0 15px 0;
+  border: 2px solid transparent;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--font-dark);
+}
+
+.myPage-select-ul button:hover {
+  cursor: pointer;
+  border-bottom: 2px solid var(--primary-color);
+  box-sizing: border-box;
+  color: var(--primary-color);
+}
+
+/* 토글용 클래스 */
+.myPage-selected-btn {
+  border-bottom: 2px solid var(--primary-color) !important;
+  box-sizing: border-box !important;
+  color: var(--primary-color) !important;
+}
+
+/* display-none */
+.myPage-display-none {
+  display: none;
+}
+
+/* top-section */
+.top-section-headBox {
+  display: flex;
+  justify-content: right;
+}
+
+.top-section-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 1. 유저정보 */
+.user-info, .user-notice-box {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 100px;
+}
+
+.user-notice-box {
+  overflow: scroll;
+  overflow-x: hidden;
+  max-height: 400px;
+
+}
+
+#userInfoUpdateBtn:hover {
+  background-color: var(--primary-hover);
+}
+
+.user-info-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.user-info-ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.user-info-left p, .user-info-right p {
+  margin: 0;
+  color: var(--font-dark);
+}
+.user-info-right > .cuponList-ul li {
+  color: var(--font-dark);
+  border: 1px solid #a7a7a781 !important;
+  border-radius: 5px;
+  padding: 8px 12px !important;
+  background-color: var(--gray-light);
+}
+
+/* 유저 등급 */
+.user-info-right {
+  position: relative;
+}
+
+.user-grade-badge img{
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: -7px;
+  left: -30px;
+}
+
+.email-tit {
+  padding: 3px 0;
+}
+
+/* 등급별 반짝이는 효과 */
+
+/* 반짝이는 오버레이 */
+.user-grade-badge::after {
+  content: "";
+  position: absolute;
+  left: -30px;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shine 4s infinite;
+  z-index: 2;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+.user-info .user-info-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.user-info-btn:hover {
+  background-color: var(--primary-hover) !important;
+}
+/* 2. 알림 */
+.user-notice-box ul {
+}
+.user-notice-ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+/* 태그가 있는 li*/
+.tag-li{
+  align-items: center;
+}
+/* span 태그 */
+#tagList {
+  display: flex;
+  justify-content: right;
+} 
+
+.user-favorite-tag {
+  display: none;
+}
+.view-tag {
+  display: block ;
+  padding: 4px 6px;
+  margin: 4px 2px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: var(--primary-color);
+  color: var(--gray-light);
+
+}
+
+/* 3. 북마크*/
+.myPage-bookmarkList {
+  overflow: scroll;
+  max-height: 1000px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.myPage-bookmarkList li {
+  position: relative;
+}
+
+/* mid-section */
+
+.reservation-left-box {
+    float: left;
+    width: 50%;
+    height: 400px;
+    background-color: var(--gray-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.reservation-left-box .reservation-img {
+  border-radius: 12px;
+  width: 600px;
+  height: 400px;
+  background-size: cover;
+  position: relative;
+}
+
+.reservation-img:hover::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.reservation-right-box {
+    float: right;
+    width: 40%;
+    height: 400px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    position: relative;
+}
+  
+.reservation-right-box ul {
+  list-style: none;
+  padding: 15px 15px 15px 15px;
+}
+
+.reservation-right-box li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.reservation-left-tit {
+  font-weight: bold;
+  width: 30%;
+}
+.reservation-right-tit {
+  font-size: 14px;
+  width: 70%;
+}
+
+.reservation-right-box .reservationInfoBtn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0.5rem;
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+}
+
+/* bottom-section */
+
+.reservation-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.reservation-table th {
+    background-color: var(--primary-color);
+    font-weight: bold;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    color: var(--gray-light);
+}
+
+.reservation-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    color: var(--font-dark);
+    font-size: 14px;
+}
+
+.myPage-content-group::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+
+
+/* 회원 정보 수정 modal */
+/*  모달창  */
+/* 전체 모달 영역 숨김 기본값 */
+.modal {
+    display: none; /* JS로 제어 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: -100px;
+    width: 100%;
+    height: 150%;
+    background-color: rgba(0,0,0,0.6);
+  }
+  
+  /* 모달 박스 */
+  .modal-body {
+    background-color: #fff;
+    width: 90%;
+    max-width: 500px;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+  /* 제목 */
+  .modal-main-tit {
+    margin: 60px 0 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* 내용 */
+  .modal-content .modal-content-tit {
+    color: var(--font-dark);
+    font-size: 14px;
+    font-weight: bold;
+    width: 30%;
+}
+  /* 모달 내부 설명글 */
+  .modal-info-tit {
+    font-size: 12px;
+    color: var(--gray-dark);
+    line-height: 1.5;
+  }
+  .modal-subInfo-tit {
+    font-size: 12px;
+  }
+
+  /* input 영역 */
+  .modal-input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  }
+  .modal-input-group input {
+    width: 60%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+  }
+  .modal-input-group .modal-tag-box {
+    width: 60%;
+    padding: 12px 24px 12px 0;
+  }
+  .modal-tag-box .tag-btn{
+    padding: 4px 6px;
+    margin: 4px 2px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    color: var(--font-dark);
+    box-shadow: 2px 2px 1px rgba(0,0,0,0.35);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+
+  .tag-btn:hover{
+    cursor: pointer;
+    background-color: #d8d8d8;
+  }
+  
+  .tag-btn:active{
+    background-color: var(--primary-color);
+    color: var(--gray-light);
+    transform: translate(2px, 2px);
+    box-shadow: none;
+  }
+  
+  .tag-btn-toggle{
+    background-color: var(--primary-color);
+    color: var(--gray-light) !important;
+  }
+  .tag-btn-toggle:hover{
+    background-color: #cc4557 !important;
+  }
+  .tag-btn-toggle:active{
+    color: var(--font-dark) !important;
+  }
+  
+
+  /* info 그룹 */
+  .modal-info-group {
+   display: flex;
+   justify-content: space-between;
+
+  }
+
+  
+  /* 버튼 영역 */
+  .modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .modal-actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  #wmMembership {
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  .modal-sub-btn {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .modal-sub-btn:disabled {
+    background-color: var(--disabled);
+  }
+  
+  .modal-close-btn {
+    background-color: #ddd;
+    color: #333;
+  }
+  /* 로고 이미지 크기 */
+  .modal-logo {
+    width: 150px;
+    height: 58px;
+    object-fit: contain;
+    position: relative;
+    left: -20px;
+  }
+  /* 로고 위치 변경 */
+  .logo-position-div {
+    position: absolute;
+  }
+
+  /* 회원탈퇴 textarea */
+  .auto-fit-textarea {
+    width: 100%;
+    height: 150px;
+    resize: none;
+    box-sizing: border-box;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  .tit-title {
+    padding: 12px 0;
+    font-size: 16px;
+
+  }
+
+  /* 인증번호 받기 버튼 */
+  .get-certified-btn{
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  /* 인증번호 입력 div */
+  #verifyBox {
+    display: none;
+  }
+  #verifyEmailBox{
+    display: none;
+  }
+  /* 인증 버튼 */
+  #certifiedUserPhoneSubBtn {
+   display: none;
+  }
+
+  /* 세부예약정보 모달 */
+.reservation-detail-ul{
+  padding: 20px;
+} 
+.reservation-detail-ul li{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.cancel-reservation {
+  background-color: var(--primary-color);
+  color: var(--gray-light);
+}
+
+/* 예약 취소 모달 */
+.refundReason-select {
+
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-color: #ccc;
+  margin-top: 30px;
+  font-weight: bold;
+  color: var(--font-dark);
+}
+.refundReason-select:hover {
+  cursor: pointer;
+}
+
+.refundReason-select option {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--font-dark);
+}
+
+.refundReason-select:focus {
+  outline: none;  
+}
+
+#otherReasonBox p{
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  color: var(--font-dark);
+}
+
+.print-number {
+  border: transparent;
+  background-color: transparent;
+  text-decoration-line: underline;
+}
+
+.print-number:hover {
+  color: rgb(73, 73, 73) !important;
+}
+
+.print-number:active {
+}
+
+.print-number svg {
+  color: gray !important; 
+  width: 12px;
+  height: 12px;
+}
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<form th:fragment="search" id="searchBox">
+  <script th:inline="javascript">
+    const styleOfSearchFragment = document.createElement('link');
+    styleOfSearchFragment.rel = "stylesheet";
+    styleOfSearchFragment.href = /*[[@{/css/search.css}]]*/;
+    document.head.appendChild(styleOfSearchFragment);
+
+    const flatpickrCss = document.createElement('link');
+    flatpickrCss.rel = "stylesheet";
+    flatpickrCss.href = "https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css";
+    document.head.appendChild(flatpickrCss);
+
+    const flatpickrCustomCss = document.createElement('link');
+    flatpickrCustomCss.rel = "stylesheet";
+    flatpickrCustomCss.href = /*[[@{/css/flatpickrCustom.css}]]*/;
+    document.head.appendChild(flatpickrCustomCss);
+
+    const flatpickrTheme = document.createElement('link');
+    flatpickrTheme.rel = "stylesheet";
+    flatpickrTheme.type = "text/css";
+    flatpickrTheme.href = "https://npmcdn.com/flatpickr/dist/themes/material_red.css";
+    document.head.appendChild(flatpickrTheme);
+  </script>
+  <div id="searchKeywordArea">
+    <div id="noKeywordWarning" class="invisible">
+      <span>목적지를 선택해주세요.</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+      </svg>
+    </div>
+    <input type="text" id="searchKeywordInput" aria-label="검색" placeholder="여행지나 숙소를 검색해보세요." name="keyword" autocomplete="off">
+    <div id="searchSuggestions" class="invisible"></div>
+  </div>
+
+  <div id="dateArea">
+    <input type="date" id="checkInInput" class="dateInput" aria-label="첫날" name="checkIn">
+    <span>~</span>
+    <input type="date" id="checkOutInput" class="dateInput" aria-label="마지막날" name="checkOut">
+  </div>
+  <div id="peopleCountArea">
+    <div>
+      <span>어른 </span>
+      <span class="adultCount"></span>
+    </div>
+    <div>
+      <span>아이 </span>
+      <span class="childCount"></span>
+    </div>
+    <div id="peopleCountInputArea" class="invisible">
+      <div id="adultInputArea">
+        <input type="hidden" name="adult" id="adultInput">
+        <svg xmlns="http://www.w3.org/2000/svg" id="adultMinusBtn"
+             width="20" height="20" fill="currentColor"
+             class="bi bi-dash-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+          <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+        </svg>
+        <span>어른 </span>
+        <span class="adultCount"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" id="adultPlusBtn"
+             width="20" height="20" fill="currentColor"
+             class="bi bi-plus-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+        </svg>
+      </div>
+      <div id="childInputArea">
+        <input type="hidden" name="child" id="childInput">
+        <svg xmlns="http://www.w3.org/2000/svg" id="childMinusBtn"
+             width="20" height="20" fill="currentColor"
+             class="bi bi-dash-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+          <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+        </svg>
+        <span>아이 </span>
+        <span class="childCount"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" id="childPlusBtn"
+             width="20" height="20" fill="currentColor"
+             class="bi bi-plus-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" id="searchBtn">
+    <span>검색</span>
+  </button>
+  <input type="hidden" id="freeForm" name="freeForm">
+  <script type="module" th:src="@{/js/util/debounce.js}"></script>
+
+  <script type="module" th:inline="javascript">
+    import(/*[[@{/js/search/search.js}]]*/).then(module => {
+      module.default(/*[[${lodgeOption}]]*/, /*[[${listOption}]]*/, /*[[${lodgeDTO}]]*/);
+    });
+  </script>
+</form>

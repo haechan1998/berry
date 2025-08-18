@@ -1,0 +1,285 @@
+:root {
+  --primary-color: #e74b60;
+  --gray-light: #f5f5f5;
+  --gray-dark: #666;
+  --font-dark: #333;
+  --disabled: #b85766c7;
+}
+
+/* 전체 컨테이너 정리 */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: white;
+  border-radius: 16px;
+}
+
+/* 제목 스타일 */
+h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* 안내문구 */
+p {
+  color: #555;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* 안내문구 박스 스타일 */
+.notice-box {
+  background-color: #e9ecef;
+  padding: 24px;
+  margin: 30px auto;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #333;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
+}
+
+.date-range {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.date-picker {
+  width: 150px;
+  height: 36px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+/* 검색 폼 전체 wrapper */
+.search-box-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  width: 100%;
+}
+
+/* 검색줄 스타일 */
+.search-line {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 1000px;
+  margin-bottom: 10px;
+}
+
+/* 셀렉트박스, 검색창, 버튼 스타일 고정 */
+.search-line input[type="date"] {
+  width: 150px;
+  height: 32px;
+  font-size: 15px;
+  border: 1px solid #ccc !important;
+  border-radius: 8px;
+  padding: 6px 10px;
+  box-shadow: none !important;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.search-line select {
+  width: 100px;
+  height: 38px;
+  font-size: 15px;
+  border: 1px solid #ccc !important;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  box-shadow: none !important;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.search-line input[type="search"] {
+  width: 450px;
+  height: 38px;
+  font-size: 15px;
+  border: 1px solid #ccc !important;
+  border-radius: 8px;
+  padding: 6px 10px;
+  box-shadow: none !important;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.search-line .btn.btn-primary {
+  width: 100px;
+  height: 38px;
+  font-size: 15px;
+  border: 1px solid #ccc !important;
+  border-radius: 8px;
+  padding: 0;
+  box-shadow: none !important;
+  transition: background-color 0.2s, border-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 검색 버튼 & 작성 버튼 스타일 */
+.btn.btn-primary,
+.btn.btn-primary:hover,
+.btn.btn-primary:active {
+  background-color: var(--primary-color);
+  border: 1px solid #ccc !important;
+  color: white;
+}
+
+.btn.btn-primary {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.btn.btn-primary:hover {
+  cursor: pointer;
+  opacity: 0.9
+}
+
+/* 작성 버튼 컨테이너 */
+.d-grid.gap-2.d-md-flex.justify-content-md-end {
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 0 10px;
+}
+
+/* 테이블 스타일 */
+.table {
+  margin-top: 30px;
+  background-color: #fff;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  table-layout: fixed;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.table thead {
+  background-color: #dee2e6;
+}
+
+.table thead th {
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px;
+  border: 1px solid #ccc;
+}
+
+.table tbody td,
+.table tbody th {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 14px;
+  padding: 12px 10px;
+  word-break: break-word;
+  border: 1px solid #ddd;
+}
+
+.table a {
+  text-decoration: none;
+  color: var(--font-dark);
+}
+
+.table a:hover {
+  text-decoration: underline;
+}
+
+.table tbody tr:nth-child(-n+5) {
+  background-color: #e6e6e6;
+}
+
+
+/* 배지 스타일 */
+.badge {
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+/* 페이지네이션 */
+.pagination {
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 20px;
+}
+
+.page-link {
+  color: var(--primary-color);
+  border-radius: 8px !important;
+  font-size: 14px;
+  padding: 8px 14px;
+}
+
+.page-item.active .page-link {
+  background-color: var(--primary-color);
+  border-color: var(--gray-light);
+  color: white;
+}
+
+.page-item.disabled .page-link {
+  color: #ccc;
+}
+
+.date-picker-wrapper {
+  position: relative;
+  display: inline-block;
+
+   align-items: center;
+}
+
+.date-picker-wrapper svg {
+  pointer-events: none; /* 클릭을 input으로 전달 */
+}
+
+.date-picker {
+  cursor: pointer;
+  padding-right: 36px; /* 오른쪽 아이콘 공간 확보 */
+  height: 36px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.calendar-icon {
+  position: absolute;
+  right: 12px;       /* 오른쪽 12px 위치 */
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  cursor: pointer;   /* 커서 포인터로 변경 */
+  user-select: none; /* 드래그 방지 */
+}
+
+
+.table thead th:nth-child(1) { width: 7%; }
+.table thead th:nth-child(2) { width: 13%; }
+.table thead th:nth-child(3) { width: 40%; }
+.table thead th:nth-child(4) { width: 15%; }
+.table thead th:nth-child(5) { width: 15%; }
+.table thead th:nth-child(6) { width: 10%; }
+
+.table td a {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}

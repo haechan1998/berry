@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.next.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/css/user/userLogin.css}">
+</head>
+
+<div layout:fragment="content">
+  <div class="content-inner">
+    <div class="login-container">
+
+      <img class="login-logo" th:src="@{/image/Berry_logo_login.png}" width="48" height="56">
+
+      <!-- 좌측: 로그인 입력 -->
+      <div class="left-section">
+        <h2>
+          로그인
+        </h2>
+        <form th:action="@{/user/login}" method="post" class="login-form">
+          <!-- duorpeb, redirect 를 위한 hidden Input -->
+          <th:block th:if="${param.redirectTo ne null}">
+            <input type="hidden" name="redirectTo" th:value="${param.redirectTo}" />
+          </th:block>
+
+          <div class="user-input-group">
+            <input type="text" name="userEmail" id="userInputEmail" placeholder="이메일(example@domain.com)" required>
+          </div>
+          <p class="error-message" id="errorMessage">[[${errorMessage}]]</p>
+          <div class="user-input-group">
+            <input type="password" name="password" id="userInputPassword" placeholder="비밀번호" required>
+          </div>
+          <div class="find-password-box">
+            <div class="find-password-box-left"></div>
+            <div class="find-password-box-right"><button type="button" id="resetPasswordBtn">비밀번호 재설정</button></div>
+          </div>
+          <button type="submit" class="login-btn" disabled>로그인</button>
+        </form>
+        <div class="signup-link">
+          <p>아직 회원이 아니신가요?
+            <a th:href="@{/user/signup}" id="webSignBtn">회원가입</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- 우측: 소셜 로그인 -->
+      <!-- 소셜로그인을 누르면 모달을 띄워주고 소셜로그인 id 를 설정해서 js 로 챙겨간 id 를 확인해서 그 a 태그의 click 이벤트를 활성화 하기 -->
+      <div class="right-section">
+        <h2>간편 로그인</h2>
+        <a th:href="@{/oauth2/authorization/kakao}">
+          <button type="button" class="social-btn kakao-btn">
+            <span>카카오 로그인</span>
+          </button>
+        </a>
+        <a th:href="@{/oauth2/authorization/naver}">
+          <button type="button" class="social-btn naver-btn">
+            <span>네이버 로그인</span>
+          </button>
+        </a>
+        <a th:href="@{/oauth2/authorization/google}">
+          <button type="button" class="social-btn google-btn">
+            <span>구글 로그인</span>
+          </button>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- 개인정보 활용동의 및 마케팅 정보 수신동의 모달창-->
+    <div class="modal" id="personalInfoModal">
+      <div class="modal-body">
+        <div class="logo-position-div">
+          <img class="modal-logo" src="/image/Berry_logo.png" alt="로고">
+        </div>
+        <h2 class="modal-main-tit">개인정보 활용 동의</h2>
+
+        <div class="modal-content">
+          <p>서비스 이용을 위해 아래의 개인정보 수집 및 마케팅 정보 수신에 동의해 주세요.</p>
+
+          <div class="checkbox-group">
+            <label>
+              <input type="checkbox" id="agreePersonal">
+              <span class="personal-tit">[필수] 개인정보 수집 및 이용 동의</span>
+            </label>
+            <label>
+              <input type="checkbox" id="agreeMarketing">
+              <span>[선택] 마케팅 정보 수신 동의</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" id="modalSubBtn" disabled>제출하기</button>
+          <button type="button" id="closeModal">닫기</button>
+        </div>
+      </div>
+    </div>
+    <!--#e74b60, #e73c8, #a9439a -->
+  </div>
+
+  <!-- 비밀번호 재설정 modal -->
+  <div class="modal" id="resetPasswordModal">
+    <div class="modal-body">
+      <div class="logo-position-div">
+        <img class="modal-logo" src="/image/Berry_logo.png" alt="로고">
+      </div>
+      <h2 class="modal-main-tit">비밀번호 재발급</h2>
+
+      <div class="modal-content">
+        <p class="reset-tit-1">가입시 사용한 이메일을 입력해주세요.</p>
+        <p class="reset-tit-2">이메일로 전송된 인증번호를 입력해주세요.</p>
+        <div class="modal-input-group flex-sb" id="resetFirstCertified">
+          <input type="text" id="resetModalInputEmail" placeholder="example@test.com">
+          <button type="button" class="get-certified-btn" id="emailCheckBtn" disabled>확인</button>
+        </div>
+
+        <div class="modal-input-group" id="verifyEmailBox">
+          <input type="text" id="resetCertifiedCodeInput" placeholder="인증코드를 입력해주세요">
+        </div>
+
+        <div class="modal-actions">
+          <div class="modal-action-left">
+          </div>
+          <div class="modal-action-right">
+            <button type="button" class="modal-sub-btn" id="resetPasswordCertifiedUserEmailSubBtn">인증</button>
+            <button type="button" class="modal-close-btn" id="resetPasswordModalClose">닫기</button>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- duorpeb, redirect 를 위한 div -->
+  <div class="redirect"></div>
+
+  <!-- duorpeb, For redirect -->
+  <script th:inline="javascript">
+    <th:block th:if="${param.redirectTo ne null}">
+      <input type="hidden" name="redirectTo" th:value="${param.redirectTo}" />
+    </th:block>
+  </script>
+  <script th:inline="javascript">
+    const membershipWithdrawal = [[${membershipWithdrawal}]];
+  </script>
+  <script th:src="@{/js/user/userLoginModal.js}"></script>
+
+  <!-- duorpeb, redirect JS -->
+  <script th:src="@{/js/user/duorpebRedirect.js}"></script>
+</div>
