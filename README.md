@@ -14,6 +14,8 @@
 
 <a href="https://www.erdcloud.com/d/eKKqYtQ4ji3fNK6b9"><img src="https://github.com/user-attachments/assets/8ffc8df7-039f-410b-9e5e-9d8f8df3cfe9"></a>
 
+<br>
+
 ## 역할.
 * **유저 · 북마크 · 알림 DB 설계**
   
