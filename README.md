@@ -1,3 +1,5 @@
+<img src="https://capsule-render.vercel.app/api?type=speech&height=200&color=gradient&text=BedRequest&fontAlignY=42">
+
 # BedRequest 숙박 프로젝트
 ---
 ### 📗Sptring Boot 프로젝트
@@ -8,14 +10,18 @@
 
 <br>
 
+## 프로젝트 ERD
+
+
+
 ## 역할.
 * **유저 · 북마크 · 알림 DB 설계**
   
 <br>
 
-* **로그인 및 회원가입 페이지** <br>
-  * 웹 로그인 및 OAuth 2.0 (소셜로그인 기능 구현) <br>
-  * Security Config 및 Login, out handler 커스텀 <br>
+* **로그인 및 회원가입 페이지**
+  * 웹 로그인 및 OAuth 2.0 (소셜로그인 기능 구현)
+  * Security Config 및 Login, out handler 커스텀
   * 모바일 본인인증 (CoolSMS 활용) 및 이메일 인증(Google SMTP) 인증 구현
   * 비밀번호 재설정
     
