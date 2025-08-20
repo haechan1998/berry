@@ -1,47 +1,55 @@
-<img src="https://capsule-render.vercel.app/api?type=speech&height=200&color=gradient&text=BedRequest&fontAlignY=42">
+# 🏨 BedRequest 숙박 프로젝트  
 
-# BedRequest 숙박 프로젝트
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=180&section=header&text=BedRequest&fontSize=50&fontAlignY=35" />
+
 ---
-### 📗Sptring Boot 프로젝트
-<br>
 
-## 프로젝트 소개.
-* 그 동안 배운 다양한 기능들을 숙박 예약 플랫폼 사용자 친화적인 숙박 프로젝트를 제작하는것을 1순위로 목표하고, <br> 각종 숙박 플랫폼을 확인하며 데이터를 활용한 프로젝트입니다. 
+## 📘 프로젝트 소개
+> 숙박 예약 플랫폼을 벤치마킹하여 **사용자 친화적인 UI/UX**와 **안정적인 백엔드 로직**을 구현한 프로젝트입니다.  
+Spring Boot 기반으로 제작되었으며, **회원 인증/보안, 예약 관리, 개인화 기능**을 중점적으로 맡아 개발했습니다.  
 
-<br>
+---
 
-## 프로젝트 ERD
+## ⚙️ 기술 스택  
 
-<a href="https://www.erdcloud.com/d/eKKqYtQ4ji3fNK6b9"><img src="https://github.com/user-attachments/assets/8ffc8df7-039f-410b-9e5e-9d8f8df3cfe9"></a>
+### Backend  
+<img src="https://img.shields.io/badge/Spring%20Boot-3.5.13-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"> 
+<img src="https://img.shields.io/badge/Java-17-007396?style=for-the-badge&logo=java&logoColor=white"> 
+<img src="https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white">  
 
-<br>
+### Database & Frontend  
+<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> 
+<img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">  
 
-## 역할.
-* **유저 · 북마크 · 알림 DB 설계**
-  
-<br>
+### Library & API  
+- 📅 flatpickr  
+- 🔐 OAuth 2.0 (소셜 로그인)  
+- 📧 Google SMTP (이메일 인증)  
+- 📱 CoolSMS (휴대폰 본인인증)  
 
-* **로그인 및 회원가입 페이지**
-  * 웹 로그인 및 OAuth 2.0 (소셜로그인 기능 구현)
-  * Security Config 및 Login, out handler 커스텀
-  * 모바일 본인인증 (CoolSMS 활용) 및 이메일 인증(Google SMTP) 인증 구현
-  * 비밀번호 재설정
-    
-<br>
+---
 
-* **마이페이지**
-  * 회원정보 수정 및 회원 탈퇴
-  * 비밀번호 변경
-  * 북마크 백엔드 설계
-  * 예약 내역, 리스트, 세부정보 구현
-    
-<br>
+## 🗂️ 프로젝트 ERD  
+<a href="https://www.erdcloud.com/d/eKKqYtQ4ji3fNK6b9"><img src="https://github.com/user-attachments/assets/8ffc8df7-039f-410b-9e5e-9d8f8df3cfe9"></a>  
 
-* **메인 페이지**
-  * 메인 배너 슬라이드 구현
+---
 
+## 👤 개인 역할 & 기여  
 
+### 🔑 회원 인증/보안
+- **웹 로그인 및 소셜 로그인(OAuth 2.0)** 구현  
+- **Spring Security** 설정 및 로그인/로그아웃 핸들러 커스텀  
+- **모바일 본인인증 (CoolSMS), 이메일 인증(Google SMTP)** 적용  
+- **비밀번호 재설정, 변경, 회원 탈퇴** 기능 구현  
 
+### 🗄️ 데이터베이스 설계
+- **유저(User), 북마크(Bookmark), 알림(Notification)** 테이블 설계 및 ERD 모델링  
 
+### 📌 마이페이지
+- 회원정보 수정 기능 개발  
+- 북마크 기능 백엔드 설계 및 연동  
+- 예약 내역 리스트 & 상세 조회 구현  
 
-**하단 footer**
+### 🖥️ UI/UX 기능
+- **메인 페이지 배너 슬라이드** 구현 (자동재생/정지/이전·다음 버튼 포함)  
