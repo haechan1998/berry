@@ -35,7 +35,10 @@ Spring Boot 기반으로 제작되었으며, **회원 인증/보안, 예약 관�
 - flatpickr  
 - OAuth 2.0 (소셜 로그인)  
 - Google SMTP (이메일 인증)  
-- CoolSMS (휴대폰 본인인증)  
+- CoolSMS (휴대폰 본인인증)
+
+### Collaboration Tool
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 
 ---
 <br>
