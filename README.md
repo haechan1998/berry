@@ -23,19 +23,22 @@ Spring Boot 기반으로 제작되었으며, **회원 인증/보안, 예약 관�
 
 ### Backend  
 <div>
- <img src="https://img.shields.io/badge/Spring%20Boot-3.5.13-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"> 
+ <img src="https://img.shields.io/badge/springboot%203.5.13-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">
  <img src="https://img.shields.io/badge/Spring%20Boot%20Data%20Jpa-6DB33F?style=for-the-badge&logoColor=white">
 </div>
-<div><img src="https://img.shields.io/badge/Java-17-007396?style=for-the-badge&logo=java&logoColor=white"></div>
+<div><img src="https://img.shields.io/badge/java%2017-007396?style=for-the-badge&logo=OpenJDK&logoColor=white"></div>
 <div><img src="https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white"></div>
+
+
 
 ### Database & Frontend  
 <div><img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"></div>
 <div>
- <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+ <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white">
  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 </div>
+<div><img src="https://img.shields.io/badge/Thymeleaf-005F0F?style=for-the-badge&logo=Thymeleaf&logoColor=white"></div>
 
 ### Library & API  
 - flatpickr  
