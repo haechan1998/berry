@@ -53,7 +53,12 @@ Spring Boot 기반으로 제작되었으며, **회원 인증/보안, 예약 관�
 <br>
 
 ## 프로젝트 ERD  
-<a href="https://www.erdcloud.com/d/eKKqYtQ4ji3fNK6b9"><img src="https://github.com/user-attachments/assets/8ffc8df7-039f-410b-9e5e-9d8f8df3cfe9"></a>  
+<a href="https://www.erdcloud.com/d/eKKqYtQ4ji3fNK6b9"><img src="https://github.com/user-attachments/assets/8ffc8df7-039f-410b-9e5e-9d8f8df3cfe9"></a>
+
+<br>
+
+## 프로젝트 팀 PDF
+[최종 프로젝트.pdf](https://github.com/user-attachments/files/22164746/default.pdf)
 
 ---
 <br>
@@ -70,13 +75,24 @@ Spring Boot 기반으로 제작되었으며, **회원 인증/보안, 예약 관�
 - **유저(User), 북마크(Bookmark), 알림(Notification)** 테이블 설계 및 ERD 모델링  
 
 ### 마이페이지
-- 회원정보 수정 기능 개발  
+- 회원정보 수정 기능 개발
+<img width="300" height="370" alt="Image" src="https://github.com/user-attachments/assets/c5dbafd0-afea-46e7-bba8-ddc249a76aa7" />
+ 
 - 북마크 기능 백엔드 설계 및 연동  
 - 예약 내역 리스트 & 상세 조회 구현
+<img width="800" height="400" alt="Image" src="https://github.com/user-attachments/assets/15abe33f-d604-44cc-83cc-7a8362c43b04" />
 
 ### UI/UX 기능
 - **메인 페이지 배너 슬라이드** 구현 (자동재생/정지/이전·다음 버튼 포함)
+<img width="800" height="400" alt="Image" src="https://github.com/user-attachments/assets/943a2a45-e740-4e6a-849d-729ca18298df" />
+
 - **로그인 / 회원가입 페이지 프론트엔드** 구현
+<img width="800" height="400" alt="Image" src="https://github.com/user-attachments/assets/459f8dbb-9fb1-4158-b518-2033d5b41bbe" />
+
+<img width="300" height="400" alt="8 가입활성화" src="https://github.com/user-attachments/assets/419db20c-fb51-47b4-8195-8ab3a45ea12b" />
+
+
+  
 - **마이페이지 프론트엔드** 구현
 
 ---
