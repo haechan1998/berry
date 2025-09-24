@@ -53,7 +53,7 @@ Spring Boot 기반으로 제작되었으며, **회원 인증/보안, 예약 관�
 <br>
 
 ## 프로젝트 ERD  
-<a href="https://www.erdcloud.com/d/eKKqYtQ4ji3fNK6b9"><img src="https://github.com/user-attachments/assets/8ffc8df7-039f-410b-9e5e-9d8f8df3cfe9"></a>
+<a href="https://www.erdcloud.com/d/ibmGft9nMJNdbA866"><img src="https://github.com/user-attachments/assets/8ffc8df7-039f-410b-9e5e-9d8f8df3cfe9"></a>
 
 <br>
 
